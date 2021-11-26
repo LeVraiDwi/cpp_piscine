@@ -1,12 +1,12 @@
 SRCS = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
 
-CFLAGS := -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror
 
 SRC_PATH = ./
 
 SRC_NAME = megaphone.cpp
 
-OBJS = ${SRCS:.c=.o}
+OBJS = ${SRCS:.cpp=.o}
 
 NAME = megaphone
 
@@ -15,9 +15,10 @@ CC = clang++
 RM = rm -f
 
 .c.o: 
-			${CC} ${CFLAGS} ${HEADER} -c $< -o $@
+			${CC} ${CFLAGS} ${HEADER} -c $@ -o $<
 
 ${NAME}:	${OBJS}
+		${CC} -o ${NAME} ${OBJS} ${FLAGS}
 
 all:		${NAME}
 
