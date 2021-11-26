@@ -3,5 +3,6 @@
 # include <iostream>
 # include <iomanip>
 # include "book.hpp"
+# include "page.hpp"
 
 #endif

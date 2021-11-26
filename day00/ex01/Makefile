@@ -4,7 +4,7 @@ CFLAGS := -Wall -Wextra -Werror
 
 SRC_PATH = ./
 
-SRC_NAME = main.cpp book.cpp
+SRC_NAME = main.cpp book.cpp page.cpp
 
 OBJS = ${SRCS:.c=.o}
 
