@@ -1,10 +1,10 @@
 SRCS = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
 
-FLAGS = -Wall -Wextra -Werror
+CFLAGS := -Wall -Wextra -Werror
 
 SRC_PATH = ./
 
-SRC_NAME = main.cpp book.cpp page.cpp
+SRC_NAME = main.cpp book.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
@@ -22,11 +22,9 @@ RM = rm -f
 ${NAME}:	${OBJS}
 
 all:		${NAME}
-		${CC} -o ${NAME} ${OBJS} ${FLAGS}
-
 
 clean:
-			${RM} ${OBJS}
+			${RM} ${OBJS} ${LIBFT}
 
 fclean:		clean
 			${RM} ${NAME}
