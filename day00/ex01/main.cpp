@@ -1,13 +1,8 @@
-#include "phonebook.h"
-
-string	get_input()
-{
-
-}
+#include "phonebook.hpp"
 
 int	main()
 {
-	string	input;
+	std::string	input;
 	book	annuaire;
 
 	input = "";
@@ -20,7 +15,7 @@ int	main()
 		else if (!input.compare("SEARCH"))
 			annuaire.search();
 		else
-			std::cout << "les commande valide sont ADD, SEARCH, EXIT" << endl;
+			std::cout << "les commande valide sont ADD, SEARCH, EXIT" << std::endl;
 	}
 	return (1);
 }
