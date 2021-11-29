@@ -49,9 +49,10 @@ int	book::_aff_index(std::string str) const{
 	{
 		if (this->_book[i].comp(str))
 		{
-			this->_book[i].aff_format_line(i);
+			this->_book[i].aff_format_line(i + 1);
 			nb_line++;
 		}
+		i++;
 	}
 	return (nb_line);
 }

@@ -20,6 +20,7 @@ RM = rm -f
 			${CC} ${CFLAGS} ${HEADER} -c $< -o $@
 
 ${NAME}:	${OBJS}
+		${CC} -o ${NAME} ${OBJS} ${FLAGS}
 
 all:		${NAME}
 
