@@ -15,19 +15,19 @@ int	page::complete(void){
 	std::string	secret;
 
 	std::cout << "First Name:";
-	std::cin >> first;
+	std::getline(std::cin, first);
 	if(first.empty())
 		return (0);
 	std::cout << "Last Name:";
-	std::cin >> last;
+	std::getline(std::cin, last);
 	if(last.empty())
 		return (0);
 	std::cout << "Nickname:";
-	std::cin >> nick;
+	std::getline(std::cin, nick);
 	if(nick.empty())
 		return (0);
 	std::cout << "Darkest secret:";
-	std::cin >> secret;
+	std::getline(std::cin, secret);
 	if(secret.empty())
 		return (0);
 	this->_first.assign(first);

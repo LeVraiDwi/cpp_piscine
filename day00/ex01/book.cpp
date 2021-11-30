@@ -11,7 +11,7 @@ book::~book(void){
 
 void	book::add(void)
 {
-	int	index;
+	std::string	index;
 
 	if(this->_nb_page < 8)
 	{
@@ -22,11 +22,11 @@ void	book::add(void)
 	}
 	else
 	{
-		std::cout << "l'annuaire est plein qu'elle index remplacer?";
-		std::cin >> index;
-		if (index > 0 && index < 9)
+		std::cout << "l'annuaire est plein qu'elle index remplacer: ";
+		std::getline(std::cin, index);
+		if (index.length() == 1 && index[0] > '0' && index[0] < '9')
 		{
-			if (!this->_book[index - 1].complete());
+			if (!this->_book[index[0] - '0' - 1].complete())
 				std::cout << "chaine vide" << std::endl;
 		}
 		else
@@ -49,7 +49,7 @@ int	book::_aff_index(std::string str) const{
 	{
 		if (this->_book[i].comp(str))
 		{
-			this->_book[i].aff_format_line(i + 1);
+			this->_book[i].aff_format_line(nb_line + 1);
 			nb_line++;
 		}
 		i++;
@@ -59,7 +59,7 @@ int	book::_aff_index(std::string str) const{
 
 void	book::search(void) const{
 	std::string	str;
-	int		index;
+	std::string	index;
 	int		nb_line;
 	
 	if (!this->_nb_page)
@@ -68,7 +68,7 @@ void	book::search(void) const{
 		return;
 	}
 	std::cout << "qui cherchez vous?";
-	std::cin >> str;
+	std::getline(std::cin, str);
 	if (str.empty())
 	{
 		std::cout << "chaine vide" << std::endl;
@@ -78,10 +78,12 @@ void	book::search(void) const{
 	{
 		nb_line = this->_aff_index(str);
 	}
+	if (nb_line == 0)
+		return;
 	std::cout << "choisissez un index:";
-	std::cin >> index;
-	if (index > 0 && index <= nb_line)
-		this->_aff_line(index - 1);
+	std::getline(std::cin, index);
+	if (index.length() == 1 && index[0] > '0' && index[0] < nb_line + '0' + 1)
+		this->_aff_line(index[0] - '0' - 1);
 	else
 		std::cout << "index choisis invalide" << std::endl;
 		

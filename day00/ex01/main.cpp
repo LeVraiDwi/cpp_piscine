@@ -9,8 +9,7 @@ int	main()
 	while (input.compare("EXIT"))
 	{
 		std::cout << "que voulez vous faire:";
-		while (input.empty())
-			std::cin >> input;
+		std::getline(std::cin, input);
 		if (!input.compare("ADD"))
 			annuaire.add();
 		else if (!input.compare("SEARCH"))
@@ -19,7 +18,6 @@ int	main()
 			return (1);
 		else
 			std::cout << "les commande valide sont ADD, SEARCH, EXIT" << std::endl;
-		input = "";
 	}
 	return (1);
 }
