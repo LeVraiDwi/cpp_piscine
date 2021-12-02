@@ -1,11 +1,11 @@
-#include "account.hpp"
+#include "Account.hpp"
 #include <ctime>
 #include <iostream>
 
-t::Account(int initial_deposit){
+Account::Account(int initial_deposit){
 	this->_accountIndex = this->_nbAccounts;
 	this->_amount = initial_deposit;
-	this->_totalAmount += this->_amout;
+	this->_totalAmount += this->_amount;
 	this->_nbDeposits = 0;
 	this->_nbWithdrawals = 0;
 	this->_nbAccounts += 1;
@@ -14,13 +14,13 @@ t::Account(int initial_deposit){
 	return;
 }
 
-t::~Account();{
+Account::~Account(){
 	_displayTimestamps();
 	std::cout << "index:" << this->_accountIndex << ";" << "amount:" << this->_amount << ";close" << std::endl; 
 	return;
 }
 
-void	t::makeDeposit(int deposit){
+void	Account::makeDeposit(int deposit){
 	_displayTimestamps();
 	std::cout << "index:" << this->_accountIndex << ";" << "p_amount:" << this->_amount << ";"; 
 	this->_amount += deposit;
@@ -31,13 +31,13 @@ void	t::makeDeposit(int deposit){
 	return;
 }
 
-static void	t::displayAccountInfos(void){
+static void	Account::displayAccountInfos(void){
 	_displayTimestamps();
 	std::cout << "accounts:" << this->_nbAccounts << ";total:" << this->_totalAmount << ";deposits:" << this->_nbDeposits << ";withdrawals:" << this->_nbWithdrawals << std::endl;
 	return;
 }
 
-bool	t::makeWithdrawal(int withdrawal){
+bool	Account::makeWithdrawal(int withdrawal){
 	_displayTimestamps();
 	std::cout << "index:" << this->_accountIndex << ";p_amount:" << this->_amount << ";";
 	if (withdrawal > this->_amount)
@@ -53,13 +53,13 @@ bool	t::makeWithdrawal(int withdrawal){
 	return (1);
 }
 
-void	t::displayStatus(void) const{
+void	Account::displayStatus(void) const{
 	_displayTimestamps();
 	std::cout << "index:" << this->_accountIndex << ";amount:" << this->_amount << ";deposits" << this->_nbDeposits << ";withdrawals:" << this->_nbWithdrawals << std::endl;
 	return;
 }
 
-static void	t::_displayTimestamp(void){
+static void	Account::_displayTimestamp(void){
 	time		timer;
 	struct tm	act_time = {0};
 
