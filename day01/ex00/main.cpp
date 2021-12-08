@@ -1,7 +1,7 @@
 #include "Zombie.hpp"
 
 int	main(){
-	Zombie	zombie;
+	Zombie	zombie = Zombie("");
 	Zombie	*rob;
 
 	rob = newZombie("rob");

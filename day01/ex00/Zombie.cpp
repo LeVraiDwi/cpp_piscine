@@ -1,8 +1,13 @@
 #include "Zombie.hpp"
 
 Zombie::Zombie(std::string name){
+	long unsigned int	l;
+
 	if (name.empty())
+	{
 		this->name = "default";
+		return;
+	}
 	this->name = name;
 	return;
 }
