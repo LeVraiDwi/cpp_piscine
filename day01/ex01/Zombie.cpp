@@ -1,12 +1,6 @@
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name){
-	if (name.empty())
-	{
-		this->name = "default";
-		return;
-	}
-	this->name = name;
+Zombie::Zombie(): name("default"){
 	return;
 }
 
@@ -17,5 +11,11 @@ Zombie::~Zombie(void){
 
 void	Zombie::announce(void) const{
 	std::cout << "<" << this->name << "> BraiiiiiiinnnzzzZ..." << std::endl;
+	return;
+}
+
+void	Zombie::initialize(std::string name){
+	if (!name.empty())
+		this->name = name;
 	return;
 }
