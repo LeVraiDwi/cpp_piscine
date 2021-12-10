@@ -1,6 +1,6 @@
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string name, Weapon weapon): _name("random guys"), _weapon_type(weapon)
+HumanA::HumanA(std::string name, Weapon & weapon): _name("random guys"), _weapon_type(weapon)
 {
 	if (!name.empty())
 		this->_name = name;
