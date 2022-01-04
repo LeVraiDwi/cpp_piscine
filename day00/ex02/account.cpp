@@ -1,6 +1,7 @@
 #include "Account.hpp"
 #include <ctime>
 #include <iostream>
+#include <iomanip>
 
 Account::Account(int initial_deposit){
 	this->_accountIndex = this->_nbAccounts;
@@ -65,7 +66,10 @@ void	Account::_displayTimestamp(void){
 
 	time(&timer);
 	act_time = localtime(&timer);
-	std::cout << "[" << 1900 + act_time->tm_year << act_time->tm_mon << act_time->tm_mday << "_" << act_time->tm_hour << act_time->tm_min << act_time->tm_sec << "] ";
+	std::cout << "[" << 1900 + act_time->tm_year;
+	std::cout << std::setfill('0') << std::setw(2) << act_time->tm_mon + 1;
+	std::cout << std::setfill('0') << std::setw(2) << act_time->tm_mday;
+	std::cout << "_" << act_time->tm_hour << act_time->tm_min << act_time->tm_sec << "] ";
 	return;
 }
 
