@@ -5,6 +5,7 @@
 # include <string>
 # include <cmath>
 # include <limits>
+# include <iomanip>
 
 class Convert{
 	public:

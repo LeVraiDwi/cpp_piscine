@@ -85,6 +85,7 @@ void		Convert::printConvert(void) const{
 	std::cout << "float: ";
 	try
 	{
+		std::cout << std::setprecision(1) << std::fixed;
 		std::cout << this->_toFloat() << "f" << std::endl;
 	}
 	catch (std::exception & e)
@@ -94,6 +95,7 @@ void		Convert::printConvert(void) const{
 	std::cout << "double: ";
 	try
 	{
+		std::cout << std::setprecision(1) << std::fixed;
 		std::cout << this->_toDouble() << std::endl;
 	}
 	catch (std::exception & e)
