@@ -47,8 +47,18 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	ifs.open(fileName, std::ofstream::in);
+	if (ifs.fail())
+	{
+		std::cout << "fail to open file" << std::endl;
+		return (1);
+	}
 	fileName.append(".replace");
 	ofs.open(fileName, std::ofstream::out | std::ofstream::trunc);
+	if (ofs.fail())
+	{
+		std::cout << "fail to open file" << std::endl;
+		return (1);
+	}
 	while (std::getline(ifs, read))
 	{
 		if (!read.empty())

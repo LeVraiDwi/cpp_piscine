@@ -10,6 +10,7 @@ class Harl{
 
 			typedef void	(Harl::*FuncPtr)(void) const;
 			void	complain(std::string const & level) const;
+			void	complainFiltre(std::string const & level) const;
 
 	private:
 		static FuncPtr		_ptr[4];

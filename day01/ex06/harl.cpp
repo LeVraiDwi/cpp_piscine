@@ -15,6 +15,46 @@ void	Harl::complain(std::string const & level) const{
 	return;
 }
 
+void	Harl::complainFiltre(std::string const & level) const{
+	int	i;
+	
+	i = 0;
+	while (i < 4 && _func[i].compare(level))
+		i++;
+	switch (i)
+	{
+		case 0:
+			for (int y = 0; y < 4; y++)
+			{
+				(this->*_ptr[y])();
+				std::cout << std::endl;
+			}
+			break;
+		case 1:
+			for (int y = 1; y < 4; y++)
+			{
+				(this->*_ptr[y])();
+				std::cout << std::endl;
+			}
+			break;
+		case 2:
+			for (int y = 2; y < 4; y++)
+			{
+				(this->*_ptr[y])();
+				std::cout << std::endl;
+			}
+			break;
+		case 3:
+			for (int y = 3; y < 4; y++)
+			{
+				(this->*_ptr[y])();
+				std::cout << std::endl;
+			}
+			break;
+	}
+	return;
+}
+
 void	Harl::_debug() const{
 	std::cout << "[ DEBUG ]" << std::endl;
 	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I really do!" << std::endl;

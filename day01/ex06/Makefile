@@ -8,7 +8,7 @@ SRC_NAME = main.cpp harl.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
-NAME = Harl
+NAME = harlFilter
 
 HEADER = -I "./"
 
