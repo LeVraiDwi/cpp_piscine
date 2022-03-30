@@ -1,6 +1,6 @@
 #include "Zombie.hpp"
 
-#define NB_ZOMB 0
+#define NB_ZOMB 10
 
 int	main(){
 	Zombie	*horde_rob;

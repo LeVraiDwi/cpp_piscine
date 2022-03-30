@@ -4,18 +4,20 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC_PATH = ./
 
-SRC_NAME = megaphone.cpp
+SRC_NAME = main.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
-NAME = megaphone
+NAME = Harl
 
-CC = g++
+HEADER = -I "./"
+
+CC = clang++
 
 RM = rm -f
 
 .c.o: 
-			${CC} ${FLAGS} ${HEADER} -c $@ -o $<
+			${CC} ${FLAGS} ${HEADER} -c $< -o $@
 
 ${NAME}:	${OBJS}
 			${CC} -o ${NAME} ${OBJS} ${FLAGS}

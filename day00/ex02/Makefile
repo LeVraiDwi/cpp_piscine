@@ -1,6 +1,6 @@
 SRCS = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
 
-CFLAGS := -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror
 
 SRC_PATH = ./
 
@@ -8,19 +8,19 @@ SRC_NAME = tests.cpp account.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
-NAME = PhoneBook
+NAME = DreamJob
 
 HEADER = -I "./"
 
-CC = clang++
+CC = c++
 
 RM = rm -f
 
 .c.o: 
-			${CC} ${CFLAGS} ${HEADER} -c $< -o $@
+			${CC} ${FLAGS} ${HEADER} -c $< -o $@
 
 ${NAME}:	${OBJS}
-		${CC} -o ${NAME} ${OBJS} ${FLAGS}
+			${CC} -o ${NAME} ${OBJS} ${FLAGS}
 
 all:		${NAME}
 

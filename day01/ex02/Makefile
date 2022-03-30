@@ -1,6 +1,6 @@
 SRCS = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
 
-CFLAGS := -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror
 
 SRC_PATH = ./
 
@@ -17,10 +17,10 @@ CC = clang++
 RM = rm -f
 
 .c.o: 
-			${CC} ${CFLAGS} ${HEADER} -c $< -o $@
+			${CC} ${FLAGS} ${HEADER} -c $< -o $@
 
 ${NAME}:	${OBJS}
-		${CC} -o ${NAME} ${OBJS} ${FLAGS}
+			${CC} -o ${NAME} ${OBJS} ${FLAGS}
 
 all:		${NAME}
 

@@ -1,18 +1,19 @@
-#include "phonebook.hpp"
+#include "PhoneBook.hpp"
 
-page::page(void){
+Contact::Contact(void){
 	return;
 }
 
-page::~page(void){
+Contact::~Contact(void){
 	return;
 }
 
-int	page::complete(void){
+int	Contact::complete(void){
 	std::string	nick;
 	std::string	first;
 	std::string	last;
 	std::string	secret;
+	std::string	num;
 
 	std::cout << "First Name:";
 	std::getline(std::cin, first);
@@ -26,6 +27,10 @@ int	page::complete(void){
 	std::getline(std::cin, nick);
 	if(nick.empty())
 		return (0);
+	std::cout << "Phone number:";
+	std::getline(std::cin, num);
+	if(num.empty())
+		return (0);
 	std::cout << "Darkest secret:";
 	std::getline(std::cin, secret);
 	if(secret.empty())
@@ -34,10 +39,11 @@ int	page::complete(void){
 	this->_last.assign(last);
 	this->_nick.assign(nick);
 	this->_secret.assign(secret);
+	this->_phon.assign(num);
 	return (1);
 }
 
-void	page::_format(std::string str) const{
+void	Contact::_format(std::string str) const{
 	if (str.length() > 10)
 		std::cout << str.substr(0, 9) << ".";
 	else
@@ -45,7 +51,7 @@ void	page::_format(std::string str) const{
 	return;
 }
 
-void	page::aff_format_line(int i) const{
+void	Contact::aff_format_line(int i) const{
 	std::cout << std::setw(10) << i;
 	std::cout << "|";
 	this->_format(this->_first);
@@ -57,7 +63,7 @@ void	page::aff_format_line(int i) const{
 	return;
 }
 
-int	page::comp(std::string str) const{
+int	Contact::comp(std::string str) const{
 	if (!this->_first.compare(0, str.length(), str))
 		return (1);
 	else if (!this->_last.compare(0, str.length(), str))
@@ -67,10 +73,11 @@ int	page::comp(std::string str) const{
 	return (0);
 }
 
-void	page::afficher(void) const{
-	std::cout << "First name:" << this->_first << std::endl;
-	std::cout << "Last name:" << this->_last << std::endl;
-	std::cout << "Nickname:" << this->_nick << std::endl;
-	std::cout << "Darkest secret:" << this->_secret << std::endl;
+void	Contact::afficher(void) const{
+	std::cout << "First name: " << this->_first << std::endl;
+	std::cout << "Last name: " << this->_last << std::endl;
+	std::cout << "Nickname: " << this->_nick << std::endl;
+	std::cout << "Phone number: " << this->_phon << std::endl;
+	std::cout << "Darkest secret: " << this->_secret << std::endl;
 	return;
 }

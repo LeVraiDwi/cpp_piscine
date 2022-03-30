@@ -1,12 +1,12 @@
-#include "phonebook.hpp"
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
+# include <iostream>
+# include "PhoneBook.hpp"
 
-#ifndef PAGE_HPP
-# define PAGE_HPP
-
-class page{
+class Contact{
         public:
-                page(void);
-                ~page(void);
+                Contact(void);
+                ~Contact(void);
                 int	complete(void);
                 void	afficher(void) const;
 		void	aff_format_line(int i) const;
@@ -18,5 +18,6 @@ class page{
 		std::string _last;
 		std::string _nick;
 		std::string _secret;
+		std::string _phon;
 };
 #endif
