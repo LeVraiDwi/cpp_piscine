@@ -4,8 +4,7 @@ int	main(){
 	Zombie	zombie = Zombie("");
 	Zombie	*rob;
 
-	rob = newZombie("rob");
-	rob->announce();
+	rob = newZostringmbie("rob");
 	zombie.announce();
 	randomChump("jack");
 	delete rob;

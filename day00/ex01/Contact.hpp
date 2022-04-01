@@ -5,19 +5,19 @@
 
 class Contact{
         public:
-                Contact(void);
-                ~Contact(void);
-                int	complete(void);
-                void	afficher(void) const;
-		void	aff_format_line(int i) const;
-		int	comp(std::string str) const;
+			Contact(void);
+			~Contact(void);
+			int		complete(void);
+			void	afficher(void) const;
+			void	aff_format_line(int i) const;
 
         private:
-		void	_format(std::string str) const;
-		std::string _first;
-		std::string _last;
-		std::string _nick;
-		std::string _secret;
-		std::string _phon;
+			int			comp(std::string str) const;
+			void		_format(std::string str) const;
+			std::string	_first;
+			std::string _last;
+			std::string _nick;
+			std::string _secret;
+			std::string _phon;
 };
 #endif

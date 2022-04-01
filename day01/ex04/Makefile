@@ -12,11 +12,11 @@ NAME = replace
 
 HEADER = -I "./"
 
-CC = clang++
+CC = c++
 
 RM = rm -f
 
-.c.o: 
+.cpp.o: 
 			${CC} ${FLAGS} ${HEADER} -c $< -o $@
 
 ${NAME}:	${OBJS}

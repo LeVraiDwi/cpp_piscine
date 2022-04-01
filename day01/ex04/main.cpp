@@ -2,7 +2,7 @@
 #include <fstream>
 #include <string>
 
-void	writeAndReplace(std::string & read, std::string const s1, std::string const s2, std::ofstream & ofs)
+void	writeAndReplace(std::string & read, std::string const s1, std::string const s2)
 {
 	int l;
 
@@ -46,14 +46,14 @@ int	main(int argc, char **argv)
 		std::cout << "Erreur: le chaine s2 est invalide" << std::endl;
 		return (1);
 	}
-	ifs.open(fileName, std::ofstream::in);
+	ifs.open(fileName.data(), std::ofstream::in);
 	if (ifs.fail())
 	{
 		std::cout << "fail to open file" << std::endl;
 		return (1);
 	}
 	fileName.append(".replace");
-	ofs.open(fileName, std::ofstream::out | std::ofstream::trunc);
+	ofs.open(fileName.data(), std::ofstream::out | std::ofstream::trunc);
 	if (ofs.fail())
 	{
 		std::cout << "fail to open file" << std::endl;
@@ -62,7 +62,7 @@ int	main(int argc, char **argv)
 	while (std::getline(ifs, read))
 	{
 		if (!read.empty())
-			writeAndReplace(read, s1, s2, ofs);
+			writeAndReplace(read, s1, s2);
 		ofs << read << std::endl;
 	}
 	ifs.close();

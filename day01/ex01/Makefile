@@ -4,7 +4,7 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC_PATH = ./
 
-SRC_NAME = main.cpp Zombie.cpp ZombieHorde.cpp
+SRC_NAME = main.cpp Zombie.cpp zombieHorde.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
@@ -12,11 +12,11 @@ NAME = zombie
 
 HEADER = -I "./"
 
-CC = clang++
+CC = c++
 
 RM = rm -f
 
-.c.o: 
+.cpp.o: 
 			${CC} ${FLAGS} ${HEADER} -c $< -o $@
 
 ${NAME}:	${OBJS}

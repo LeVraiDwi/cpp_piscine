@@ -10,6 +10,10 @@ Zombie::Zombie(std::string name){
 	return;
 }
 
+Zombie::Zombie(): name("randomZombie"){
+	return;
+}
+
 Zombie::~Zombie(void){
 	std::cout << this->name << " a disparut" << std::endl;
 	return;

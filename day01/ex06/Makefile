@@ -4,7 +4,7 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC_PATH = ./
 
-SRC_NAME = main.cpp harl.cpp
+SRC_NAME = main.cpp Harl.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
@@ -16,7 +16,7 @@ CC = c++
 
 RM = rm -f
 
-.c.o: 
+.cpp.o: 
 			${CC} ${FLAGS} ${HEADER} -c $< -o $@
 
 ${NAME}:	${OBJS}
