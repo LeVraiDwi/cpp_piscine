@@ -5,9 +5,12 @@
 void	writeAndReplace(std::string & read, std::string const s1, std::string const s2)
 {
 	int l;
+	int	pos;
 
-	while ((l = read.find(s1)) >= 0)
+	pos = 0;
+	while ((l = read.find(s1, pos)) >= 0 && !s1.empty())
 	{
+		pos = l + s2.size();
 		read.erase(l, s1.length());
 		read.insert(l, s2);
 	}
@@ -34,16 +37,6 @@ int	main(int argc, char **argv)
 	if (fileName.empty())
 	{
 		std::cout << "Erreur: le nom du fichier est invalide" << std::endl;
-		return (1);
-	}
-	if (s1.empty())
-	{
-		std::cout << "Erreur: la chaine s1 est invalide" << std::endl;
-		return (1);
-	}
-	if (s2.empty())
-	{
-		std::cout << "Erreur: le chaine s2 est invalide" << std::endl;
 		return (1);
 	}
 	ifs.open(fileName.data(), std::ofstream::in);

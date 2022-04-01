@@ -24,33 +24,21 @@ void	Harl::complainFiltre(std::string const & level) const{
 	switch (i)
 	{
 		case 0:
-			for (int y = 0; y < 4; y++)
-			{
-				(this->*_ptr[y])();
+				(this->*_ptr[0])();
 				std::cout << std::endl;
-			}
-			break;
 		case 1:
-			for (int y = 1; y < 4; y++)
-			{
-				(this->*_ptr[y])();
+				(this->*_ptr[1])();
 				std::cout << std::endl;
-			}
-			break;
 		case 2:
-			for (int y = 2; y < 4; y++)
-			{
-				(this->*_ptr[y])();
+				(this->*_ptr[2])();
 				std::cout << std::endl;
-			}
-			break;
 		case 3:
-			for (int y = 3; y < 4; y++)
-			{
-				(this->*_ptr[y])();
+				(this->*_ptr[3])();
 				std::cout << std::endl;
-			}
-			break;
+				break;
+		default:
+				std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+				break;
 	}
 	return;
 }
@@ -68,7 +56,7 @@ void	Harl::_info() const{
 }
 
 void	Harl::_warning() const{
-	std::cout << "[ Warning ]" << std::endl;
+	std::cout << "[ WARNING ]" << std::endl;
 	std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming for years whereas you started working here since last month." << std::endl;
 	return;
 }
