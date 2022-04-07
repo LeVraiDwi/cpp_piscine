@@ -16,6 +16,8 @@ WrongCat::~WrongCat(){
 }
 
 WrongCat &   WrongCat::operator=(WrongCat const & rhs){
+    if (&rhs == this)
+        return *this;
     this->_type = rhs.getType();
     return *this;
 }

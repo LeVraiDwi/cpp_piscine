@@ -16,6 +16,8 @@ Cat::~Cat(){
 }
 
 Cat &   Cat::operator=(Cat const & rhs){
+    if (&rhs == this)
+        return *this;
     this->_type = rhs.getType();
     return *this;
 }

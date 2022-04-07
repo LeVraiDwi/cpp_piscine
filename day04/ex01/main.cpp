@@ -28,5 +28,13 @@ int	main(){
 	catb = cata;
 	std::cout << "ADDRESS OF A BRAIN :" << (cata.getBrain()) << std:: endl;
 	std::cout << "ADDRESS OF B BRAIN :" << (catb.getBrain()) << std:: endl;
+
+	Dog	basic;
+	{
+		Dog tmp = basic;
+	std::cout << "ADDRESS OF A BRAIN :" << (basic.getBrain()) << std:: endl;
+	std::cout << "ADDRESS OF B BRAIN :" << (tmp.getBrain()) << std:: endl;
+	}
+
     return (0);
 }
