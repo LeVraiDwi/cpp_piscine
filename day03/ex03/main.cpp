@@ -10,6 +10,7 @@ int	main(){
 	FragTrap	new_nono(nono);
 	DiamondTrap	tim("71M");
 	DiamondTrap	new_tim(tim);
+	DiamondTrap	def;
 	
 	kev.attack("M4RV1N");
 	marv.beRepaired(122);

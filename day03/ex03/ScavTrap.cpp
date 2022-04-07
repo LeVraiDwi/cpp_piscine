@@ -1,5 +1,10 @@
 #include "ScavTrap.hpp"
 
+ScavTrap::ScavTrap(): ClapTrap(){
+	std::cout << "Assemblage par default de ScavTrap: " <<  this->_name << ". HELLO HUMAN!" << std::endl;
+	return;
+}
+
 ScavTrap::ScavTrap(std::string const & name): ClapTrap(name){
 	std::cout << "Assemblage de Scavtrap: " << this->_name << " HELLO HUMAN!" << std::endl; 
 	this->_pv = 100;

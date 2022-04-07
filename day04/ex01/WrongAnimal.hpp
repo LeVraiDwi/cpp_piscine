@@ -9,9 +9,9 @@ class WrongAnimal{
 		WrongAnimal(std::string const & type);
 		~WrongAnimal();
 
-		WrongAnimal &	    operator=(WrongAnimal const & rhs);
-        std::string     getType() const;
-        virtual void    makeSound() const;
+		WrongAnimal &	operator=(WrongAnimal const & rhs);
+        std::string		getType() const;
+        void			makeSound() const;
 
 	protected:
 		std::string _type;

@@ -1,10 +1,10 @@
 SRCS = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
 
-CFLAGS := -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC_PATH = ./
 
-SRC_NAME = Main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
+SRC_NAME = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
@@ -14,11 +14,11 @@ HEADER = -I "./"
 
 FLAG = -Wshadow -Wno-shadow
 
-CC = clang++
+CC = c++
 
 RM = rm -f
 
-.c.o: 
+.cpp.o: 
 			${CC} ${CFLAGS} ${HEADER} -c $< -o $@
 
 ${NAME}:	${OBJS}

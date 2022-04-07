@@ -6,8 +6,8 @@ int	main(){
 
 	rob = newZombie("rob");
 	rob->announce();
+	delete rob;
 	zombie.announce();
 	randomChump("jack");
-	delete rob;
 	return (0);
 }

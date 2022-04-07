@@ -1,5 +1,10 @@
 #include "DiamondTrap.hpp"
 
+DiamondTrap::DiamondTrap(): ClapTrap(), ScavTrap(), FragTrap(), _name("defaultDiams"){
+	std::cout << "Assemblage par default de DiamondTrap: " <<  this->_name << ". HELLO HUMAN!" << std::endl;
+	return;
+}
+
 DiamondTrap::DiamondTrap(std::string const & name): ClapTrap(name), ScavTrap(name), FragTrap(name), _name(name){
 	std::cout << "Assemblage de Fragtrap: " << this->_name << " PERFECT F0RM ATIVATE!" << std::endl;
 	ClapTrap::_name.append("_clap_name");

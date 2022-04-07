@@ -1,6 +1,6 @@
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal(void): _type("no type"){
+WrongAnimal::WrongAnimal(void): _type(""){
     std::cout << "constructeur WrongAnimal" << std::endl;
 	return;
 }

@@ -1,10 +1,10 @@
 SRCS = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
 
-CFLAGS := -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC_PATH = ./
 
-SRC_NAME = main.cpp Fixed.cpp 
+SRC_NAME = main.cpp Fixed.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
@@ -12,7 +12,7 @@ NAME = Fixed
 
 HEADER = -I "./"
 
-CC = clang++
+CC = c++
 
 RM = rm -f
 

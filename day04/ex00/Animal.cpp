@@ -1,6 +1,6 @@
 #include "Animal.hpp"
 
-Animal::Animal(void): _type(" "){
+Animal::Animal(void): _type(""){
     std::cout << "constructeur Animal" << std::endl;
 	return;
 }

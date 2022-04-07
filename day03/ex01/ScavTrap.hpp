@@ -5,6 +5,7 @@
 
 class ScavTrap : public ClapTrap{
 	public:
+		ScavTrap();
 		ScavTrap(std::string const & name);
 		ScavTrap(ScavTrap const & cpy);
 		~ScavTrap();

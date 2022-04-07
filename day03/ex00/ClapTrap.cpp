@@ -1,5 +1,10 @@
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap(): _name("DefaultClap"), _pv(10), _mana(10), _dmg(0){
+	std::cout << "Assemblage par default de ClapTrap: " <<  this->_name << ". HELLO HUMAN!" << std::endl;
+	return;
+}
+
 ClapTrap::ClapTrap(std::string const & name): _name(name), _pv(10), _mana(10), _dmg(0){
 	std::cout << "Assemblage de ClapTrap: " <<  this->_name << ". HELLO HUMAN!" << std::endl;
 	return;
