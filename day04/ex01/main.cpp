@@ -30,8 +30,10 @@ int	main(){
 	std::cout << "ADDRESS OF B BRAIN :" << (catb.getBrain()) << std:: endl;
 
 	Dog	basic;
+	Dog	basic2(basic);
 	{
 		Dog tmp = basic;
+		tmp = basic2;
 	std::cout << "ADDRESS OF A BRAIN :" << (basic.getBrain()) << std:: endl;
 	std::cout << "ADDRESS OF B BRAIN :" << (tmp.getBrain()) << std:: endl;
 	}
