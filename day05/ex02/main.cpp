@@ -7,7 +7,7 @@
 int	main(){
 	Bureaucrat	soso("Socrate", 1);
 	Bureaucrat	popo("Hypocrate", 150);
-	ShrubberyCreationForm		a37("test");
+	ShrubberyCreationForm		a37("jolie");
 	RobotomyRequestForm			a36("Nono");
 	PresidentialPardonForm		a1("Jean Le Tueur");
 

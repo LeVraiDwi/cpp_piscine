@@ -2,6 +2,7 @@
 # define ROBOTOMYREQUESTFORM_HPP
 # include <iostream>
 # include <ctime>
+# include <cstdlib>
 # include "Bureaucrat.hpp"
 
 class Bureaucrat;
@@ -15,6 +16,7 @@ class RobotomyRequestForm: public Form{
 		RobotomyRequestForm &	operator=(RobotomyRequestForm const & rhs);
 		void					doExecute(void) const;
 	private:
+		RobotomyRequestForm();
 		std::string const	_target;
 };
 

@@ -15,6 +15,7 @@ class PresidentialPardonForm: public Form{
 		PresidentialPardonForm &	operator=(PresidentialPardonForm const & rhs);
 		void					doExecute(void) const;
 	private:
+		PresidentialPardonForm();
 		std::string const	_target;
 };
 

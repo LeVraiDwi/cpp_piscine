@@ -17,6 +17,7 @@ class ShrubberyCreationForm: public Form{
 		ShrubberyCreationForm &	operator=(ShrubberyCreationForm const & rhs);
 		void					doExecute(void) const;
 	private:
+		ShrubberyCreationForm();
 		std::string const	_target;
 };
 

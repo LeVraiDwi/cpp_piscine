@@ -6,6 +6,7 @@ Intern::Intern(){
 }
 
 Intern::Intern(Intern const & src){
+	(void)src;
 	std::cout << "constructeur Intern par copie" << std::endl;
 	return;
 }
@@ -16,6 +17,8 @@ Intern::~Intern(){
 }
 
 Intern &		Intern::operator=(Intern const & rhs){
+	if (this == &rhs)
+		return *this;
 	return *this;
 }
 
@@ -31,13 +34,13 @@ Form *	Intern::_newTree(std::string const & target){
 	return new ShrubberyCreationForm(target);
 }
 
-std::string Intern::_form[3]{
+std::string Intern::_form[3] = {
 	"presidential pardon",
 	"robotomy request",
 	"shrubbery creation",
 };
 
-Intern::FunctionPointer 	Intern::_funcPointer[3]{
+Intern::FunctionPointer 	Intern::_funcPointer[3] = {
 	&Intern::_newPresidential,
 	&Intern::_newRobotomi,
 	&Intern::_newTree,

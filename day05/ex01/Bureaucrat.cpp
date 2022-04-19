@@ -1,5 +1,9 @@
 #include "Bureaucrat.hpp"
 
+Bureaucrat::Bureaucrat(){
+	return;
+}
+
 Bureaucrat::Bureaucrat(std::string const & name, int grade): _name(name){
 	std::cout << "constructeur Bureaucrat: " << this->_name << std::endl;
 	if (grade < 1)
@@ -69,7 +73,7 @@ Bureaucrat::GradeTooHighException::GradeTooHighException(){
 	return;
 }
 
-Bureaucrat::GradeTooHighException::~GradeTooHighException(){
+Bureaucrat::GradeTooHighException::~GradeTooHighException() throw(){
 	std::cout << "destructeur GradeTooHighException" << std::endl;
 	return;
 }
@@ -83,7 +87,7 @@ Bureaucrat::GradeTooLowException::GradeTooLowException(): std::exception(){
 	return;
 }
 
-Bureaucrat::GradeTooLowException::~GradeTooLowException(){
+Bureaucrat::GradeTooLowException::~GradeTooLowException() throw(){
 	std::cout << "destructeur GradeTooLowhException" << std::endl;
 	return;
 }

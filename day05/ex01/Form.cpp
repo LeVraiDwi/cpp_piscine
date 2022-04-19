@@ -1,5 +1,9 @@
 #include "Form.hpp"
 
+Form::Form(): _signable(0), _executable (0){
+	return;
+}
+
 Form::Form(std::string const & name, int signable, int executable): _name(name), _signable(signable), _executable(executable){
 	std::cout << "constructeur Form: " << this->_name << std::endl;
 	if (this->_signable < 1 || this->_executable < 1)
@@ -56,7 +60,7 @@ Form::GradeTooHighException::GradeTooHighException(){
 	return;
 }
 
-Form::GradeTooHighException::~GradeTooHighException(){
+Form::GradeTooHighException::~GradeTooHighException() throw(){
 	std::cout << "destructeur GradeTooHighException" << std::endl;
 	return;
 }
@@ -70,7 +74,7 @@ Form::GradeTooLowException::GradeTooLowException(): std::exception(){
 	return;
 }
 
-Form::GradeTooLowException::~GradeTooLowException(){
+Form::GradeTooLowException::~GradeTooLowException() throw(){
 	std::cout << "destructeur GradeTooLowhException" << std::endl;
 	return;
 }

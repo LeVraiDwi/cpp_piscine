@@ -1,5 +1,9 @@
 #include "RobotomyRequestForm.hpp"
 
+RobotomyRequestForm::RobotomyRequestForm(): Form("RobotomyRequestForm", 72, 45){
+	return;
+}
+
 RobotomyRequestForm::RobotomyRequestForm(std::string const & target): Form("RobotomyRequestForm", 72, 45), _target(target){
 	return;
 }
@@ -15,11 +19,14 @@ RobotomyRequestForm::~RobotomyRequestForm(){
 }
 
 RobotomyRequestForm &		RobotomyRequestForm::operator=(RobotomyRequestForm const & rhs){
+	if (this == &rhs)
+		return *this;
 	return *this;
 }
 
 void						RobotomyRequestForm::doExecute(void) const{
 	srand(time(NULL));
+
 	std::cout << "BZZZZZZZZZ......BZZZZZ..BZZZ" << std::endl;
 	if (rand() % 2)
 		std::cout << this->_target << " Robotimization failed  :(" << std::endl;

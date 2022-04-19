@@ -1,5 +1,9 @@
 #include "ShrubberyCreationForm.hpp"
 
+ShrubberyCreationForm::ShrubberyCreationForm(): Form("ShrubberyCreationForm", 145, 137){
+	return;
+}
+
 ShrubberyCreationForm::ShrubberyCreationForm(std::string const & target): Form("ShrubberyCreationForm", 145, 137), _target(target){
 	return;
 }
@@ -15,6 +19,8 @@ ShrubberyCreationForm::~ShrubberyCreationForm(){
 }
 
 ShrubberyCreationForm &		ShrubberyCreationForm::operator=(ShrubberyCreationForm const & rhs){
+	if (this == &rhs)
+		return *this;
 	return *this;
 }
 
@@ -23,7 +29,7 @@ void						ShrubberyCreationForm::doExecute(void) const{
 	std::string		file_name(this->_target);
 	
 	file_name.append("_shrubbery");
-	ofs.open(file_name, std::ofstream::trunc);
+	ofs.open(file_name.data(), std::ofstream::trunc);
 	if (ofs.fail())
 	{
 		std::cout << "error when opening file" << std::endl;

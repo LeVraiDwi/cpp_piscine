@@ -21,7 +21,7 @@ class Form{
 		class GradeTooHighException: public std::exception{
 			public:
 				GradeTooHighException();
-				virtual ~GradeTooHighException();
+				virtual ~GradeTooHighException() throw();
 				virtual char const 	*what() const throw();
 			private:
 		};
@@ -29,16 +29,17 @@ class Form{
 		class GradeTooLowException: public std::exception{
 			public:
 				GradeTooLowException();
-				virtual ~GradeTooLowException();
+				virtual ~GradeTooLowException() throw();
 				virtual char const 	*what() const throw();
 			private:
 		};
 
 	private:
+		Form();
 		std::string const	_name;
 		bool				_signed;
-		int const			_executable;
 		int const			_signable;
+		int const			_executable;
 };
 
 std::ostream &	operator<<(std::ostream & o, Form const & rhs);

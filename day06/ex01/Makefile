@@ -1,6 +1,6 @@
 SRCS = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
 
-CFLAGS := -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC_PATH = ./
 
@@ -12,11 +12,11 @@ NAME = reinterprete
 
 HEADER = -I "./"
 
-CC = clang++
+CC = c++
 
 RM = rm -f
 
-.c.o: 
+.cpp.o: 
 			${CC} ${CFLAGS} ${HEADER} -c $< -o $@
 
 ${NAME}:	${OBJS}

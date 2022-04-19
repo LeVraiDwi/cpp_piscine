@@ -1,5 +1,9 @@
 #include "PresidentialPardonForm.hpp"
 
+PresidentialPardonForm::PresidentialPardonForm(): Form("PresidentialPardonForm", 72, 45){
+	return;
+}
+
 PresidentialPardonForm::PresidentialPardonForm(std::string const & target): Form("PresidentialPardonForm", 72, 45), _target(target){
 	return;
 }
@@ -15,6 +19,8 @@ PresidentialPardonForm::~PresidentialPardonForm(){
 }
 
 PresidentialPardonForm &		PresidentialPardonForm::operator=(PresidentialPardonForm const & rhs){
+	if (this == &rhs)
+		return *this;
 	return *this;
 }
 
