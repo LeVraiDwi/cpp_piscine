@@ -8,8 +8,7 @@ Cat::Cat(): Animal("Cat"){
 
 Cat::Cat(Cat const & src): Animal(src){
     std::cout << "constructeur Cat par copie" << std::endl;
-    this->_brain = new Brain;
-    *this->_brain = *src._brain;
+    this->_brain = new Brain(*src._brain);
     return;
 }
 

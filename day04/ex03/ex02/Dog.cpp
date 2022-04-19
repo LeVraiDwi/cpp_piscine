@@ -8,7 +8,8 @@ Dog::Dog(): Animal("Dog"){
 
 Dog::Dog(Dog const & src): Animal(src){
     std::cout << "constructeur Dog par copie" << std::endl;
-    this->_brain = new Brain(*src._brain);
+    this->_brain = new Brain;
+    this->_brain = src._brain;
     return;
 }
 

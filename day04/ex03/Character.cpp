@@ -1,19 +1,19 @@
 #include "Character.hpp"
 
 Character::Character(): ICharacter(), _name("Jojo"){
-	for (unsigned int i = 0; i < 3; i++)
+	for (unsigned int i = 0; i < 4; i++)
 		this->_materia[i] = NULL;
 	return;
 }
 
 Character::Character(std::string const & src): ICharacter(), _name(src){
-	for (unsigned int i = 0; i < 3; i++)
+	for (unsigned int i = 0; i < 4; i++)
 		this->_materia[i] = NULL;
 	return;
 }
 
 Character::Character(Character const & src): ICharacter(), _name(src._name){
-	for (unsigned int i = 0; i < 3; i++)
+	for (unsigned int i = 0; i < 4; i++)
 	{
 		if (src._materia[i])
 			this->_materia[i] = src._materia[i]->clone();
@@ -22,23 +22,21 @@ Character::Character(Character const & src): ICharacter(), _name(src._name){
 }
 
 Character::~Character(){
-	for (unsigned int i = 0; i < 3; i++)
-	{
-		if (this->_materia[i])
-			delete this->_materia[i];
-	}
+	for (int i = 0; i < 4; i++)
+		if (_materia[i] != NULL)
+			delete _materia[i];
 	return;
 }
 
 Character &	Character::operator=(Character const & rhs){
 	if (this == &rhs)
 		return *this;
-	for (unsigned int i = 0; i < 3; i++)
+	for (unsigned int i = 0; i < 4; i++)
 	{
 		if (this->_materia[i])
 			delete this->_materia[i];
 	}
-	for (unsigned int i = 0; i < 3; i++)
+	for (unsigned int i = 0; i < 4; i++)
 	{
 		if (rhs._materia[i])
 			this->_materia[i] = rhs._materia[i]->clone();
@@ -51,7 +49,7 @@ std::string const &	Character::getName() const{
 }
 
 void	Character::equip(AMateria *m){
-	for (unsigned int i = 0; i < 3; i++)
+	for (unsigned int i = 0; i < 4; i++)
 	{
 		if (this->_materia[i] == NULL)
 		{
