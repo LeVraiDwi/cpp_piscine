@@ -4,7 +4,7 @@
 # include <stack>
 # include <list>
 
-template <typename T, typename container = std::deque<T>>
+template <typename T, typename container = std::deque<T> >
 class	MutantStack: public std::stack<T, container>{
 	public:
 		MutantStack(): std::stack<T, container>() {return;}

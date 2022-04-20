@@ -36,7 +36,7 @@ class Array{
 			this->_array = new T[rhs._size];
 			this->_size = rhs._size;
 			for (unsigned int i = 0; i < this->_size; i++)
-				this->_array[i] == rhs._array[i];
+				this->_array[i] = rhs._array[i];
 			return *this;
 		}
 		T &	operator[](int iterator){

@@ -9,7 +9,6 @@
 #include <algorithm>
 #include <iterator>
 #include <vector>
-#include <array>
 #include <stdexcept>
 
 class NotFound : public std::exception{

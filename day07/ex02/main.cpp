@@ -14,7 +14,7 @@ int	main(){
 
 	try
 	{
-		for (int i = 0; i < tab.size(); i++)
+		for (int i = 0; i < static_cast<int>(tab.size()); i++)
 		{
 			tab[i] = tabs[i];
 			std::cout << tab[i] << std::endl;
@@ -23,7 +23,6 @@ int	main(){
 		std::cout << a[1] << std::endl;
 		std::cout << tab.size() << std::endl;
 		*cpy = tab;
-		std::cout << "heu" << std::endl;
 		std::cout << cpy->size() << std::endl;
 		std::cout << (*cpy)[3] << std::endl;
 	}

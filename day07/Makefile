@@ -6,15 +6,15 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC_PATH = ./
 
-SRC_NAME = main.cpp
+SRC_NAME = main.cpp Convert.cpp
 
 HEADER_PATH = ./
 
-HEADER_NAME = Array.hpp
+HEADER_NAME = Convert.hpp
 
 OBJS = ${SRCS:.cpp=.o}
 
-NAME = Array
+NAME = convert
 
 HEADER = -I "./"
 
