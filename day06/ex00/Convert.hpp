@@ -32,7 +32,7 @@ class Convert{
 
 	private:
 		char const		*_to_convert;
-		long double		_val;
+		double			_val;
 		bool			_isNum(char const *str) const;
 		float			_toFloat(void) const;
 		char			_toChar(void) const;

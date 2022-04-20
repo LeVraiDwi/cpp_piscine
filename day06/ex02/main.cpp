@@ -1,5 +1,6 @@
 #include <ctime>
 #include <iostream>
+#include <cstdlib> 
 #include "Base.hpp"
 #include "A.hpp"
 #include "B.hpp"
@@ -53,6 +54,7 @@ void	identify_from_reference(Base & p)
 	try
 	{
 		A	&a = dynamic_cast<A &>(p);
+		(void)a;
 		std::cout << "this is a class A" << std::endl;
 	}
 	catch (std::exception &)
@@ -62,6 +64,7 @@ void	identify_from_reference(Base & p)
 	try
 	{
 		B	&b = dynamic_cast<B &>(p);
+		(void)b;
 		std::cout << "this is a class B" << std::endl;
 	}
 	catch (std::exception &)
@@ -71,6 +74,7 @@ void	identify_from_reference(Base & p)
 	try
 	{
 		C	&c = dynamic_cast<C &>(p);
+		(void)c;
 		std::cout << "this is a class C" << std::endl;
 	}
 	catch (std::exception &)

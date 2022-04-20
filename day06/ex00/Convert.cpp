@@ -4,8 +4,7 @@ Convert::Convert(char const *val): _to_convert(val){
 	if (strlen(val) == 1 && !isdigit(val[0]))
 		this->_val = static_cast<double>(val[0]);
 	else
-		this->_val = atof(val);
-	std::cout << _val << std::endl;
+		this->_val = (strtod(val, 0));
 	return;
 }
 
@@ -27,13 +26,12 @@ Convert &	Convert::operator=(Convert const & rhs){
 
 
 float		Convert::_toFloat(void) const{
-	std::cout << (std::numeric_limits<float>::min() > _val) << std::endl;
-	if (this->_val > std::numeric_limits<float>::max() || static_cast<float>(this->_val) < std::numeric_limits<float>::min())
+	if (this->_val > std::numeric_limits<float>::max() || static_cast<float>(this->_val) < (-1 * std::numeric_limits<float>::max()))
 		throw ImpossibleException();
-	std::cout << "float??" << std::endl;
 	if (!std::isnan(this->_val) && !std::isinf(this->_val) && strlen(this->_to_convert) != 1 && !this->_isNum(this->_to_convert))
 		throw ImpossibleException();
-	std::cout << "float??" << std::endl;
+	if (this->_val == HUGE_VAL ||  this->_val == -HUGE_VAL)
+		throw ImpossibleException();
 	return static_cast<float>(this->_val);
 }
 
@@ -46,6 +44,8 @@ char		Convert::_toChar(void) const{
 		throw ImpossibleException();
 	if (!isprint(static_cast<char>(this->_val)))
 		throw UnprintableException();
+	if (this->_val == HUGE_VAL ||  this->_val == -HUGE_VAL)
+		throw ImpossibleException();
 	return static_cast<char>(this->_val);
 }
 
@@ -56,13 +56,17 @@ int			Convert::_toInt(void) const{
 		throw ImpossibleException();
 	if (std::isnan(this->_val) || std::isinf(this->_val))
 		throw ImpossibleException();
+	if (this->_val == HUGE_VAL ||  this->_val == -HUGE_VAL)
+		throw ImpossibleException();
 	return static_cast<int>(this->_val);
 }
 
 double		Convert::_toDouble(void) const{
-	if (this->_val > std::numeric_limits<double>::max() || this->_val < std::numeric_limits<double>::min())
+	if (this->_val > std::numeric_limits<double>::max() || this->_val < (-1 * std::numeric_limits<double>::max()))
 		throw ImpossibleException();
 	if (!std::isnan(this->_val) && !std::isinf(this->_val) && strlen(this->_to_convert) != 1 && !this->_isNum(this->_to_convert))
+		throw ImpossibleException();
+	if (this->_val == HUGE_VAL ||  this->_val == -HUGE_VAL)
 		throw ImpossibleException();
 	return static_cast<double>(this->_val);
 }

@@ -1,14 +1,20 @@
 SRCS = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
 
+HEADERS = $(addprefix $(HEADER_PATH),$(HEADER_NAME))
+
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC_PATH = ./
 
 SRC_NAME = main.cpp Base.cpp
 
+HEADER_PATH = ./
+
+HEADER_NAME = Base.hpp A.hpp B.hpp C.hpp
+
 OBJS = ${SRCS:.cpp=.o}
 
-NAME = identify
+NAME = reinterprete
 
 HEADER = -I "./"
 
@@ -19,8 +25,8 @@ RM = rm -f
 .cpp.o: 
 			${CC} ${CFLAGS} ${HEADER} -c $< -o $@
 
-${NAME}:	${OBJS}
-		${CC} -o ${NAME} ${OBJS} ${FLAGS}
+${NAME}:	${OBJS} ${HEADER_NAME}
+			${CC} -o ${NAME} ${OBJS} ${FLAGS}
 
 all:		${NAME}
 
