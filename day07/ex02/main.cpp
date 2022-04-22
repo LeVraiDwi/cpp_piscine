@@ -57,7 +57,16 @@ int main(int, char**)
 	};
 	Array<std::string> tab(2);
 	Array<std::string>	*cpy = new Array<std::string>();
+	Array<std::string>	 empty;
 
+	try
+	{
+		empty[0];
+	}
+	catch (std::exception & e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 	try
 	{
 		for (int i = 0; i < static_cast<int>(tab.size()); i++)
@@ -70,6 +79,11 @@ int main(int, char**)
 		std::cout << tab.size() << std::endl;
 		*cpy = tab;
 		std::cout << cpy->size() << std::endl;
+		for (int i = 0; i < static_cast<int>(tab.size()); i++)
+		{
+			std::cout << "&tab: " << &tab[i] << std::endl;
+			std::cout << "&cpy: " << &cpy[i] << std::endl;
+		}
 		std::cout << (*cpy)[3] << std::endl;
 	}
 	catch (std::exception & e)
