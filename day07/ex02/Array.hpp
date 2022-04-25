@@ -1,6 +1,7 @@
 #ifndef ARRAY_HPP
 # define ARRAY_HPP
 # include <iostream>
+# include <cstdlib>
 
 template<typename T>
 class Array{
@@ -18,8 +19,8 @@ class Array{
 		Array<T>(Array<T> const & src){
 			this->_array = new T[src._size];
 			this->_size = src._size;
-			for (unsigned int i; i < _size; i++)
-				this->_array[i] == src._array[i];
+			for (unsigned int i = 0; i < _size; i++)
+				this->_array[i] = src._array[i];
 			return;
 		}
 		virtual ~Array<T>(void){
@@ -39,13 +40,15 @@ class Array{
 				this->_array[i] = rhs._array[i];
 			return *this;
 		}
+
 		T &	operator[](int iterator){
-			if (iterator > static_cast<int>(this->_size) || iterator < 0)
+			if (iterator >= static_cast<int>(this->_size) || iterator < 0)
 				throw OutOfRangeException();
 			return this->_array[iterator];
 		}
+
 		T 	operator[](int iterator) const{
-			if (iterator > static_cast<int>(this->_size) || iterator < 0)
+			if (iterator >= static_cast<int>(this->_size) || iterator < 0)
 				throw OutOfRangeException();
 			return this->_array[iterator];
 		}
@@ -53,6 +56,7 @@ class Array{
 		unsigned int const & size(void) const{
 			return (this->_size);
 		}
+
 		class OutOfRangeException: public std::exception{
 			public:
 				OutOfRangeException(void) {return;};

@@ -27,6 +27,7 @@ int	main(){
 		"ton",
 	};
 
+	iter(tabb, 0, &print);
 	iter(tab, 5, &print);
 	iter(tabs, 2, &print);
 	iter(tabf, 2, &print);

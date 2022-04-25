@@ -1,31 +1,25 @@
 SRCS = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
 
-HEADERS = $(addprefix $(HEADER_PATH),$(HEADER_NAME))
-
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC_PATH = ./
 
-SRC_NAME = main.cpp Convert.cpp
-
-HEADER_PATH = ./
-
-HEADER_NAME = Convert.hpp
+SRC_NAME = main.cpp phonebook.cpp contact.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
-NAME = convert
+NAME = PhoneBook
 
 HEADER = -I "./"
 
-CC = c++
+CC = g++
 
 RM = rm -f
 
-.cpp.o: 
-			${CC} ${CFLAGS} ${HEADER} -c $< -o $@
+.c.o: 
+			${CC} ${FLAGS} ${HEADER} -c $< -o $@
 
-${NAME}:	${OBJS} ${HEADER_NAME}
+${NAME}:	${OBJS}
 			${CC} -o ${NAME} ${OBJS} ${FLAGS}
 
 all:		${NAME}
