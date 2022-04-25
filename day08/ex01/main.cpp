@@ -2,7 +2,7 @@
 #include <ctime>
 #include "Span.hpp"
 
-
+#define SPAN_SIZE 50000
 void	add_rand_num(Span &sp, unsigned int const nb)
 {
 	int	r;
@@ -47,9 +47,9 @@ int main()
 		std::cout << e.what() << std::endl;
 	}
 
-	Span	hsp(10001);
+	Span	hsp(SPAN_SIZE);
 
-	for (unsigned int i = 0; i < 10001; i++)
+	for (unsigned int i = 0; i < SPAN_SIZE; i++)
 		hsp.addNumber(i);
 	try
 	{
